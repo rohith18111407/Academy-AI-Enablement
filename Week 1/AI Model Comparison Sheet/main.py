@@ -167,9 +167,9 @@ MODELS_TO_EVALUATE = [
         "model_id": "anthropic.claude-3-sonnet-20240229-v1:0"
     },
     {
-        "name": "Gemini 1.5 Pro 001",
+        "name": "Gemini 1.5 Flash",
         "type": "google",
-        "model_id": "models/gemini-1.5-pro-001"
+        "model_id": "models/gemini-1.5-flash"
     },
     {
         "name": "DeepSeek R1 7B",
@@ -185,9 +185,9 @@ MODELS_TO_EVALUATE = [
 EVALUATION_PROMPTS = {
     "AppDev (Code Generation)": [
         {
-            "id": "appdev_fizzbuzz",
-            "task_description": "Python FizzBuzz",
-            "prompt": "Write a clean Python function for FizzBuzz from 1 to 100."
+            "id": "odd_even",
+            "task_description": "Python OddEven",
+            "prompt": "Write a python program to find given number is odd or even."
         }
     ],
     "Data (SQL Generation & Analysis)": [
@@ -202,11 +202,10 @@ EVALUATION_PROMPTS = {
     ],
     "DevOps (Infrastructure Automation)": [
         {
-            "id": "devops_terraform_ecs",
-            "task_description": "Terraform ECS Deployment",
+            "id": "devops_scaling",
+            "task_description": "Scaling",
             "prompt": (
-                "Create Terraform code to deploy a Docker application "
-                "on AWS ECS with an Application Load Balancer."
+                "What is the difference between Horizontal and Vertical Scaling?"
             )
         }
     ]
