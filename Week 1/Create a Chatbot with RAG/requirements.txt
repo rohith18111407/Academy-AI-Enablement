@@ -6,3 +6,6 @@ python-docx
 pypdf 
 requests 
 nltk
+pytest
+httpx
+pytest-mock

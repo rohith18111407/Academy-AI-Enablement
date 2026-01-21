@@ -412,3 +412,191 @@ This project demonstrates a clean, production-grade RAG system built from scratc
 It is ideal for learning, internal knowledge bots, and enterprise prototypes.
 
 ---
+
+
+## Unit Test
+
+### Test 1: test_embeddings.py
+
+![alt text](image-6.png)
+
+### Purpose
+
+Tests the embedding generation logic without calling Ollama.
+
+### What is mocked
+
+requests.post (Ollama embeddings API)
+
+### What this validates
+
+- Correct extraction of "embedding" from response
+
+- No real HTTP call is made
+
+- Function works even without Ollama running
+
+### Test 2: test_llm.py
+
+![alt text](image-8.png)
+
+### Purpose
+
+Tests the LLM response generation logic.
+
+### What is mocked
+
+requests.post (Ollama generate API)
+
+### What is validated
+
+- Prompt is sent correctly
+
+- Response text is extracted properly
+
+### Test 3: test_rag_store.py
+
+![alt text](image-9.png)
+
+### Purpose
+
+Tests vector store retrieval logic.
+
+### What is mocked
+
+ChromaDB collection.query
+
+### What is validated
+
+Correct parsing of:
+
+- documents
+
+- ids
+
+- distances
+
+### Test 4: test_utils.py
+
+![alt text](image-10.png)
+
+### Purpose
+
+Tests text chunking logic.
+
+### What is validated
+
+- Text is split into chunks
+
+- Overlap is applied correctly
+
+- No empty chunks are produced
+
+### Test 5: test_app.py (FastAPI Endpoint)
+
+![alt text](image-4.png)
+
+### Purpose
+
+Tests the /chat API endpoint.
+
+### What is mocked
+
+- get_embedding
+
+- query_store
+
+- generate_answer
+
+### What is validated
+
+- HTTP 200 response
+
+- Answer field exists
+
+- Sources field exists
+
+### Test 6: test_loaders.py
+
+![alt text](image-5.png)
+
+### Purpose
+
+Validates document loading logic without reading real files.
+
+### What Is Mocked
+
+- Python open()
+
+- File system interactions
+
+- File content
+
+
+### What This Test Guarantees
+
+- Loader logic works independently
+
+- No real file I/O
+
+- Safe execution in CI pipelines
+
+
+### Test 7: test_ingest.py
+
+![alt text](image-7.png)
+
+### Purpose
+
+Tests the document ingestion pipeline, ensuring documents are:
+
+- Loaded
+
+- Chunked
+
+- Embedded
+
+- Stored in the vector database
+
+### What Is Mocked
+
+- load_documents
+
+- chunk_text
+
+- get_embedding
+
+- collection.add
+
+
+### Confirms:
+
+- Data would be stored correctly
+
+- Vector DB integration logic is intact
+
+
+---
+
+## Run All Tests
+
+From project root:
+
+```
+pytest -v
+```
+
+## Run a Specific Test File
+
+```
+pytest tests/test_embeddings.py -v
+```
+
+## Run with Debug Output (Optional)
+
+```
+pytest -s
+```
+
+
+
