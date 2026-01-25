@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Environment
+.env
+
+# Chroma DB
+vectorstore/
+
+# OS
+.DS_Store
