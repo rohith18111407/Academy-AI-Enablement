@@ -192,3 +192,19 @@ Visit: https://cloud.langfuse.com
 ![alt text](image-22.png)
 
 ---
+
+## Integrate LangChain’s Built‑In Evaluation (AgentEval)
+
+1. Create a grounded evaluation dataset
+
+2. Build evaluation runner
+
+3. Compute metrics
+
+4. Save markdown report
+
+![alt text](image-23.png)
+
+![alt text](image-24.png)
+
+![alt text](image-25.png)
