@@ -8,7 +8,7 @@ brew install node
 ## Configure AWS CLI
 
 ```
-AWS CLI
+aws configure
 ```
 
 ## Create an Alias 

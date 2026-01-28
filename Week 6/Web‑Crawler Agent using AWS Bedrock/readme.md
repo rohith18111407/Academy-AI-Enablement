@@ -311,7 +311,7 @@ brew install node
 ## Configure AWS CLI
 
 ```
-AWS CLI
+aws configure
 ```
 
 ## Create an Alias 
@@ -364,10 +364,14 @@ bedrock-agent-ui/
 ## Output
 
 ```
+aws configure
+```
+
+```
 npm run dev
 ```
 
-![alt text](image-1.png)
+![alt text](image-16.png)
 
 Open
 
@@ -375,8 +379,7 @@ Open
 http://localhost:3000
 ```
 
-![alt text](image-2.png)
-
+![alt text](image-17.png)
 
 
 
