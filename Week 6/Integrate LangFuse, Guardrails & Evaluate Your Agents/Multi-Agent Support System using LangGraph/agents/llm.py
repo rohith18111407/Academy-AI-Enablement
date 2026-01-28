@@ -1,28 +1,22 @@
 # agents/llm.py
 import os
 import boto3
-from langchain_aws import ChatBedrock
 from dotenv import load_dotenv
+from langchain_aws import ChatBedrock
 
-# Load .env variables
 load_dotenv()
-
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
 
 def get_bedrock_llm():
     """
-    Initializes Amazon Bedrock LLM using Claude 3 Sonnet.
-    Credentials are loaded from .env.
+    Returns a Bedrock Claude model.
+    Langfuse tracing works automatically via decorators.
     """
+
     bedrock_client = boto3.client(
         service_name="bedrock-runtime",
-        region_name=AWS_DEFAULT_REGION,
-        aws_access_key_id=AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=AWS_SECRET_ACCESS_KEY
-        # Session token can be added if using temporary credentials:
-        # aws_session_token=os.getenv("AWS_SESSION_TOKEN")
+        region_name=os.getenv("AWS_DEFAULT_REGION", "us-east-1"),
+        aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+        aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
     )
 
     return ChatBedrock(
@@ -30,6 +24,6 @@ def get_bedrock_llm():
         model_id="anthropic.claude-3-sonnet-20240229-v1:0",
         model_kwargs={
             "temperature": 0,
-            "max_tokens": 2048
-        }
+            "max_tokens": 2048,
+        },
     )

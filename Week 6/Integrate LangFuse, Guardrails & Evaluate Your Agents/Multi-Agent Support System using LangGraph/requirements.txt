@@ -6,3 +6,4 @@ chromadb
 tavily-python
 boto3
 python-dotenv
+langfuse

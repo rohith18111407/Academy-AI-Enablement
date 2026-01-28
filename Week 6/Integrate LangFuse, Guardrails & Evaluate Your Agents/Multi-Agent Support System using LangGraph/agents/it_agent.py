@@ -3,17 +3,18 @@ from tools.rag import load_vectorstore
 from tools.web_search import get_web_search_tool
 from langchain_core.messages import HumanMessage
 from agents.utils import is_answerable
+from langfuse import observe   # <-- updated import
 
 llm = get_bedrock_llm()
 vectorstore = load_vectorstore("vectorstore/it", "data/it_docs")
 web_search = get_web_search_tool()
 
+@observe(name="IT Agent")
 def it_agent(state):
     query = state["input"]
     tools_used = []
-
     context = ""
-    use_web = False  # ✅ FIX
+    use_web = False
 
     try:
         docs = vectorstore.similarity_search(query, k=3)
@@ -23,7 +24,6 @@ def it_agent(state):
 
     if docs:
         rag_context = "\n".join(d.page_content for d in docs)
-
         if is_answerable(llm, rag_context, query):
             context = rag_context
             tools_used.append("RAG (Internal IT Docs)")
