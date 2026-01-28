@@ -1,0 +1,10 @@
+Title: Laptop Request Procedure
+
+Employees requiring a new laptop must submit a request via the IT Service Portal.
+
+Required details:
+- Reason for request (new hire, replacement, damage)
+- Manager approval
+- Role and department
+
+Standard delivery time: 5–7 business days after approval.

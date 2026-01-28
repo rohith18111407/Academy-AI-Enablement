@@ -1,0 +1,13 @@
+Title: Approved Software Policy
+
+Only software approved by the IT department may be installed on company devices.
+
+Approved software includes:
+- Microsoft Office 365
+- Google Chrome
+- Visual Studio Code
+- Docker Desktop (Engineering only)
+- SecureConnect VPN
+
+Installing unapproved software is a security violation.
+Requests for new software must be submitted through the IT Service Portal.

@@ -1,0 +1,13 @@
+Title: Corporate VPN Setup Guide
+
+All employees must use the company-approved VPN to access internal systems.
+
+Steps to set up VPN:
+1. Download "SecureConnect VPN" from the internal software portal.
+2. Install the application on your laptop.
+3. Login using your corporate email and password.
+4. Complete MFA authentication.
+5. Connect to the "Presidio-Corp" VPN profile.
+
+VPN support hours: Monday to Friday, 9 AM – 6 PM IST.
+For issues, raise a ticket via the IT Helpdesk portal.

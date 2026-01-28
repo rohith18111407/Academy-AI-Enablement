@@ -1,0 +1,14 @@
+Title: Employee Reimbursement Policy
+
+Employees can claim reimbursements for business-related expenses.
+
+Eligible expenses include:
+- Travel (flight, hotel, taxi)
+- Meals during business travel
+- Client entertainment (with approval)
+
+Reimbursement process:
+1. Submit expense report via Finance Portal.
+2. Attach original receipts.
+3. Manager approval required.
+4. Finance team processes payment within 10 business days.

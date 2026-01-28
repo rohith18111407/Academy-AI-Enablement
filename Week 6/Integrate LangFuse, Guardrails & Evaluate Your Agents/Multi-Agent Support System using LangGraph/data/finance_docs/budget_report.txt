@@ -1,0 +1,11 @@
+Title: Monthly Budget Reports
+
+Monthly budget reports are published by the Finance team.
+
+Location:
+- Finance Portal → Reports → Monthly Budget
+
+Reports include:
+- Department-wise spending
+- Budget vs actuals
+- Variance analysis
