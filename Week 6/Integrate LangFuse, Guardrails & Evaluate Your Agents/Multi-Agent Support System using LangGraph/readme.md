@@ -208,3 +208,12 @@ Visit: https://cloud.langfuse.com
 ![alt text](image-24.png)
 
 ![alt text](image-25.png)
+
+## Integrate Custom GuardRails
+
+![alt text](image-26.png)
+
+![alt text](image-27.png)
+
+
+
